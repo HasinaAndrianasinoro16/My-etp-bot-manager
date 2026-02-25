@@ -1,0 +1,128 @@
+/* ==========================================================================
+   BASE & RESET + Mobile First
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;     /* évite zoom bizarre sur mobile */
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100dvh;                 /* utilise dvh = dynamic viewport height */
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/* Variables thème */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --radius: 1rem;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --transition: all 0.25s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+  }
+}
+
+/* Conteneurs principaux */
+.app-container,
+main {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2.5rem);
+}
+
+/* Typographie responsive */
+h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.15; font-weight: 700; }
+h3 { font-size: clamp(1.4rem, 4vw, 2rem);   line-height: 1.2;  font-weight: 700; }
+
+p, li { font-size: clamp(0.95rem, 2.5vw, 1.1rem); }
+
+/* Boutons responsives */
+button,
+a.button-like {
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+  padding: 0.75em 1.5em;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99,102,241,0.25);
+}
+
+/* Login page plein écran */
+.login-fullscreen {
+  min-height: 100dvh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+}
+
+/* Media Queries - on ajuste seulement quand nécessaire */
+@media (min-width: 640px) {   /* sm */
+  .app-container { padding-inline: 2.5rem; }
+}
+
+@media (min-width: 1024px) {  /* lg */
+  .app-container { padding-inline: 3.5rem; }
+  main { padding-block: 2.5rem; }
+}
+
+@media (min-width: 1280px) {  /* xl */
+  h1 { font-size: 4.2rem; }
+  .app-container { max-width: 1480px; }
+}
+
+/* Grid/Dashboard responsive */
+.dashboard-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

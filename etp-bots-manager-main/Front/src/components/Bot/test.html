@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertion d'université</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Insertion d'une Université</h1>
+
+        <form>
+            <label for="nom">Nom de l'université</label>
+            <input type="text" id="nom" placeholder="Université de Madagascar">
+
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" placeholder="Antananarivo">
+
+            <label for="pays">Pays</label>
+            <input type="text" id="pays" placeholder="Madagascar">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="contact@universite.mg">
+
+            <label for="type">Type</label>
+            <select id="type">
+                <option>Publique</option>
+                <option>Privée</option>
+            </select>
+
+            <button type="submit">Enregistrer</button>
+        </form>
+
+        <h2>Universités (Test)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Université d'Antananarivo</td>
+                    <td>Antananarivo</td>
+                    <td>Madagascar</td>
+                    <td>Publique</td>
+                </tr>
+                <tr>
+                    <td>ITTI</td>
+                    <td>Antananarivo</td>
+                    <td>Madagascar</td>
+                    <td>Privée</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

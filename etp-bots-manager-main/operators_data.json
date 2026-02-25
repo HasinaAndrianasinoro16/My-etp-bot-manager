@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a88"
+  },
+  "operator_id": 1,
+  "label": "contains_all",
+  "many": true,
+  "value_type": "array",
+  "description": "Contient tous"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a89"
+  },
+  "operator_id": 2,
+  "label": "contains_any",
+  "many": true,
+  "value_type": "array",
+  "description": "Contient au moins un"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8a"
+  },
+  "operator_id": 3,
+  "label": "equal",
+  "many": false,
+  "value_type": "scalar",
+  "description": "égal(e) à"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8b"
+  },
+  "operator_id": 4,
+  "label": "between",
+  "many": true,
+  "value_type": "range",
+  "description": "Entre"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8c"
+  },
+  "operator_id": 5,
+  "label": "inferior",
+  "many": false,
+  "value_type": "scalar",
+  "description": "inferieur à"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8d"
+  },
+  "operator_id": 6,
+  "label": "superior",
+  "many": false,
+  "value_type": "scalar",
+  "description": "superieur à"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8e"
+  },
+  "operator_id": 7,
+  "label": "attachment_name_contains",
+  "many": false,
+  "value_type": "scalar",
+  "description": "Nom de pièce jointe contient"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a8f"
+  },
+  "operator_id": 8,
+  "label": "attachment_type_aqual",
+  "many": false,
+  "value_type": "scalar",
+  "description": "Type de tous les pièces jointes"
+},
+{
+  "_id": {
+    "$oid": "6966472d85c3417d0d5d2a90"
+  },
+  "operator_id": 9,
+  "label": "attachment_type_are",
+  "many": true,
+  "value_type": "scalar",
+  "description": "types de piece jointes valides"
+}]

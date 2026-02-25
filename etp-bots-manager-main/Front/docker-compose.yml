@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  openldap:
+    image: osixia/openldap:1.5.0
+    container_name: openldap
+    environment:
+      LDAP_ORGANISATION: "BCM"
+      LDAP_DOMAIN: "bcm.int"          # ← Change ça avec ton domaine
+      LDAP_BASE_DN: "dc=bcm,dc=int"
+      LDAP_ADMIN_PASSWORD: "admin123"     # ← Change ce mot de passe !
+    volumes:
+      - ldap_data:/var/lib/ldap
+      - ldap_config:/etc/ldap/slapd.d
+    ports:
+      - "389:389"   # LDAP
+      - "636:636"   # LDAPS (si tu ajoutes un certificat plus tard)
+    hostname: openldap
+    domainname: bcm.int
+    restart: unless-stopped
+
+  phpldapadmin: 
+    image: osixia/phpldapadmin:0.9.0
+    container_name: phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: openldap
+      PHPLDAPADMIN_HTTPS: "false"         # mets "true" si tu veux HTTPS (voir plus bas)
+      # Activation de TOUS les templates disponibles
+      PHPLDAPADMIN_SERVER_TEMPLATES: |
+        [
+          {"name": "posixAccount", "enabled": true},
+          {"name": "posixGroup", "enabled": true},
+          {"name": "inetOrgPerson", "enabled": true},
+          {"name": "sambaSamAccount", "enabled": true},
+          {"name": "sambaGroupMapping", "enabled": true},
+          {"name": "sambaDomain", "enabled": true},
+          {"name": "organizationalUnit", "enabled": true},
+          {"name": "organization", "enabled": true},
+          {"name": "domain", "enabled": true},
+          {"name": "locality", "enabled": true},
+          {"name": "country", "enabled": true},
+          {"name": "kolabPerson", "enabled": true},
+          {"name": "courierMailAccount", "enabled": true},
+          {"name": "device", "enabled": true},
+          {"name": "ipHost", "enabled": true},
+          {"name": "ieee802Device", "enabled": true},
+          {"name": "automountMap", "enabled": true},
+          {"name": "automount", "enabled": true},
+          {"name": "sudoRole", "enabled": true},
+          {"name": "simpleSecurityObject", "enabled": true}
+        ]
+    ports:
+      - "8080:80"   # ou "8080:80" si tu préfères HTTP simple
+    depends_on:
+      - openldap
+    restart: unless-stopped
+
+volumes:
+  ldap_data:
+  ldap_config:
+
+networks:
+  default:
+    name: ldap_network

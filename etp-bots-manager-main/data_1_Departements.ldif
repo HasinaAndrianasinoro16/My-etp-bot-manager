@@ -1,0 +1,44 @@
+#############################################
+# CREATION DES DOMAINES (DEPARTEMENTS)
+#############################################
+
+dn: ou=departements,dc=bcm,dc=int
+objectClass: organizationalUnit
+ou: departements
+
+dn: ou=informatique,ou=departements,dc=bcm,dc=int
+objectClass: organizationalUnit
+ou: informatique
+
+dn: ou=rh,ou=departements,dc=bcm,dc=int
+objectClass: organizationalUnit
+ou: rh
+
+dn: ou=finance,ou=departements,dc=bcm,dc=int
+objectClass: organizationalUnit
+ou: finance
+
+dn: ou=marketing,ou=departements,dc=bcm,dc=int
+objectClass: organizationalUnit
+ou: marketing
+
+
+#############################################
+# UTILISATEURS DANS LE DEPARTEMENT INFORMATIQUE
+#############################################
+
+dn: uid=rMendrikaja,ou=informatique,ou=departements,dc=bcm,dc=int
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+cn: R Mendrikaja
+sn: Mendrikaja
+givenName: R
+mail: mendrikaja@outlook.fr
+uid: rMendrikaja
+uidNumber: 11001
+gidNumber: 11001
+homeDirectory: /home/rMendrikaja
+loginShell: /bin/bash
+userPassword: mendrikaja123
+

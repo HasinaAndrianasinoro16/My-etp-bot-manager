@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a7d"
+  },
+  "field_id": 1,
+  "field_name": "has_attachment",
+  "type": "boolean",
+  "need_attachment": true,
+  "is_indexed": true,
+  "description": "Avec piece jointe "
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a7e"
+  },
+  "field_id": 2,
+  "field_name": "sent_date",
+  "type": "date",
+  "need_attachment": false,
+  "is_indexed": true,
+  "description": "date d'envoi"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a7f"
+  },
+  "field_id": 3,
+  "field_name": "from_email",
+  "type": "string",
+  "need_attachment": false,
+  "is_indexed": true,
+  "description": "expediteur"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a80"
+  },
+  "field_id": 4,
+  "field_name": "subject",
+  "type": "string",
+  "is_indexed": false,
+  "need_attachment": false,
+  "operators": [
+    1
+  ],
+  "description": "Sujet"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a81"
+  },
+  "field_id": 5,
+  "field_name": "attachments_count",
+  "type": "number",
+  "is_indexed": false,
+  "need_attachment": true,
+  "operators": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "description": "Nombre de pièce jointes"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a82"
+  },
+  "field_id": 6,
+  "field_name": "total_attachments_size",
+  "type": "number",
+  "need_attachment": true,
+  "is_indexed": false,
+  "operators": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "description": "Taille total des pièces jointes"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a83"
+  },
+  "field_id": 7,
+  "field_name": "attachment_file_type",
+  "type": "string",
+  "need_attachment": true,
+  "is_indexed": false,
+  "operators": [
+    8,
+    9
+  ],
+  "description": "Type fichier pièce jointe"
+},
+{
+  "_id": {
+    "$oid": "696646a685c3417d0d5d2a84"
+  },
+  "field_id": 8,
+  "field_name": "attachment_file_name ",
+  "type": "string",
+  "need_attachment": true,
+  "is_indexed": false,
+  "operators": [
+    7
+  ],
+  "description": "Nom fichier pièce jointe"
+}]
